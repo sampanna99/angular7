@@ -10,32 +10,36 @@ export class RecipeService{
   // recipeSelected = new EventEmitter<Recipe>();
   // recipeSelected = new Subject<Recipe>();
 
-  private  recipes: Recipe[] = [
-        new Recipe('A test Recipe', 
-        'This is simply test', 
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT227ePXe1fhPtBzQHrmJQ1KSkCb9SBbVIYEdNo0VjL5XshXDq9FA',
-        [
-          new Ingredient('Meat', 1),
-          new Ingredient('french fries', 20)
-        ]),
-        new Recipe('Another test Recipe',
-         'This is simply test', 
-         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT227ePXe1fhPtBzQHrmJQ1KSkCb9SBbVIYEdNo0VjL5XshXDq9FA',
-         [
-           new Ingredient('Buns', 2),
-           new Ingredient('Meat', 1)
+  // private  recipes: Recipe[] = [
+  //       new Recipe('A test Recipe', 
+  //       'This is simply test', 
+  //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT227ePXe1fhPtBzQHrmJQ1KSkCb9SBbVIYEdNo0VjL5XshXDq9FA',
+  //       [
+  //         new Ingredient('Meat', 1),
+  //         new Ingredient('french fries', 20)
+  //       ]),
+  //       new Recipe('Another test Recipe',
+  //        'This is simply test', 
+  //        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT227ePXe1fhPtBzQHrmJQ1KSkCb9SBbVIYEdNo0VjL5XshXDq9FA',
+  //        [
+  //          new Ingredient('Buns', 2),
+  //          new Ingredient('Meat', 1)
 
-         ])
-     ];
-      
+  //        ])
+  //    ];
+  private recipes: Recipe[] = [];
+     constructor(private slService: ShoppingListService){
+
+    }
+    setRecipes(recipes: Recipe[]){
+      this.recipes = recipes;
+      this.recipesChanged.next(this.recipes.slice());
+    }
      getRecipes(){
          return this.recipes.slice();
      }
      getRecipe(index: number){
       return this.recipes[index];
-     }
-     constructor(private slService: ShoppingListService){
-
      }
 
      addIngredientsToShoppingList(ingredients: Ingredient[]){

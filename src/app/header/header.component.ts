@@ -12,4 +12,7 @@ export class HeaderComponent{
     onSaveData(){
         this.datastorageService.storeRecipes();
     }
+    onFetchData(){
+        this.datastorageService.fetchRecipes().subscribe();
+    }
 }
