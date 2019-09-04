@@ -90,11 +90,10 @@ export class AuthService {
     }
 
     autologout(expirationDuration: number){
-        console.log(expirationDuration);
+        // console.log(expirationDuration);
         this.tokenExpirationTimer = setTimeout(() => {
             this.logout();
         }, expirationDuration);
-
     }
 
     private handleAuthentication(email: string, userId: string, token: string, expiresIn: number){
