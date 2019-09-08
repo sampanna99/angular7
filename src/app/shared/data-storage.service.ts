@@ -20,6 +20,7 @@ export class DataStorageService {
     }
 
     fetchRecipes(){
+        console.log("I am in here ")
         // return this.authService.user.pipe(take(1), exhaustMap(user => {
             return this.http.get<Recipe[]>(
                 'https://myrecipebookthird.firebaseio.com/recipes.json'
