@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 // import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { LoggingService } from './logging.service';
 // import { AuthModule } from './auth/auth.module';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CoreModule } from './core.module';
     // HttpModule I don't know if I need the client module this is said to be deprecated check online
   ],
   providers: [
+    //LoggingService
     // ShoppingListService, RecipeService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ],
   bootstrap: [AppComponent]
