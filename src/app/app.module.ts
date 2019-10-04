@@ -33,6 +33,7 @@ import { LoggingService } from './logging.service';
     // HttpModule I don't know if I need the client module this is said to be deprecated check online
   ],
   providers: [
+    LoggingService
     //LoggingService
     // ShoppingListService, RecipeService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ],
